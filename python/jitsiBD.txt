@@ -1,0 +1,45 @@
+-- Crear la base de datos
+CREATE DATABASE IF NOT EXISTS jitsi_meet_db;
+USE jitsi_meet_db;
+
+-- Tabla de Usuarios
+CREATE TABLE Usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    correo VARCHAR(255) NOT NULL UNIQUE,
+    contrasena VARCHAR(255) NOT NULL,
+    foto_perfil VARCHAR(255),
+    estado VARCHAR(50),
+    preferencias TEXT
+);
+
+-- Tabla de Videoconferencias
+CREATE TABLE Videoconferencias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fecha DATE NOT NULL,
+    hora TIME NOT NULL,
+    duracion INT,
+    creador_id INT,
+    FOREIGN KEY (creador_id) REFERENCES Usuarios(id),
+    UNIQUE KEY fecha_hora (fecha, hora)
+);
+
+-- Tabla de Participantes
+CREATE TABLE Participantes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT,
+    videoconferencia_id INT,
+    FOREIGN KEY (usuario_id) REFERENCES Usuarios(id),
+    FOREIGN KEY (videoconferencia_id) REFERENCES Videoconferencias(id),
+    UNIQUE KEY unique_participante (usuario_id, videoconferencia_id)
+);
+
+-- Tabla de Sesiones Programadas
+CREATE TABLE SesionesProgramadas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fecha DATE NOT NULL,
+    hora TIME NOT NULL,
+    creador_id INT,
+    FOREIGN KEY (creador_id) REFERENCES Usuarios(id),
+    UNIQUE KEY fecha_hora_sesion (fecha, hora)
+);

@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding-top: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
+.main-content {
+    margin-left: 220px; 
+    padding: 20px;
+}
+
+.topbar {
+    background-color: #555;
+    padding: 10px;
+    
+    top: 0;
+    right: 0;
+}
+
+.topbar ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row-reverse; 
+}
+
+.topbar li {
+    margin-left: 10px;
+}
+
+.topbar a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+#eliminarReunionForm {
+    max-width: 400px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#agendarReunionForm {
+    max-width: 400px;
+    margin: auto;
+}
+
+input[type="date"],
+input[type="time"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+

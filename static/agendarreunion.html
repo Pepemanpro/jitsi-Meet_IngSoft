@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="inapp.css">
+    <title>Agendar Reunión - Video Conferencia App</title>
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Configuración Cuenta</a></li>
+            <li><a href="#">Calendario</a></li>
+            <li><a href="#">Reuniones</a></li>
+            <li><a href="#">Configuración Reuniones</a></li>
+            <li><a href="#">Reportes</a></li>
+            <li><a href="#">Ayuda</a></li>
+        </ul>
+    </div>
+    
+    <div class="topbar">
+        <ul>
+            <li><a href="crearreunion.html">Crear Reunión</a></li>
+            <li><a href="agendarreunion.html">Agendar Reunión</a></li>
+            <li><a href="unirsereunion.html">Unirse a Reunión</a></li>
+            <li><a href="eliminarreunion.html">Eliminar Reunión</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <h1>Agendar Reunión</h1>
+        <form action="#" method="post" id="agendarReunionForm">
+            <label for="reunionId">ID de Reunión (obligatorio):</label>
+            <input type="text" id="reunionId" name="reunionId" required>
+
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" rows="4" placeholder="Añade una descripción"></textarea>
+
+            <label for="fecha">Fecha de la Reunión:</label>
+            <input type="date" id="fecha" name="fecha" required>
+
+            <label for="hora">Hora de la Reunión:</label>
+            <input type="time" id="hora" name="hora" required>
+
+            <input type="submit" value="Agendar Reunión">
+        </form>
+    </div>
+
+    
+</body>
+</html>
